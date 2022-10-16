@@ -1,0 +1,12 @@
+<layout id="MainLayout">
+    <bitmap id="space_img" x="center" y="center" filename="../drawables/space.gif" />
+    <label
+        id="current_timer"
+        text="7:00"
+        x="center"
+        y="center"
+        font="Gfx.FONT_SYSTEM_NUMBER_MEDIUM"
+        justification="Gfx.TEXT_JUSTIFY_CENTER"
+        color="0x50DEAF"
+    />
+</layout>
