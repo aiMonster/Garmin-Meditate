@@ -1,0 +1,28 @@
+<layout id="CompletedLayout">
+    <bitmap id="space_img" x="center" y="center" filename="../drawables/space.gif" />
+    <label
+        id="completed_lbl"
+        text="COMPLETED"
+        x="center"
+        y="center"
+        font="Gfx.FONT_LARGE"
+        justification="Gfx.TEXT_JUSTIFY_CENTER"
+    />
+    <label 
+        id="active_action"
+        text="Save"
+        x="center"
+        y="60%"
+        font="Gfx.FONT_SMALL"
+        justification="Gfx.TEXT_JUSTIFY_CENTER"
+    />
+    <drawable id="actions_split_line" />
+     <label 
+        id="secondary_action"
+        text="Discard"
+        x="center"
+        y="73%"
+        font="Gfx.FONT_XTINY"
+        justification="Gfx.TEXT_JUSTIFY_CENTER"
+    />
+</layout>

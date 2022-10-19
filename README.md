@@ -1,1 +1,12 @@
-# Garmin-Meditate
+# Garmin Meditate watch application
+An application for Garmin watches to track meditaions  
+https://apps.garmin.com/en-US/apps/8bb6d332-3c49-43f9-be36-f42094f89dff
+
+![Samples](screenshots/cover.png)
+
+# Version History
+**1.0.0 - Initial public version**  
+
+# Future enhancements
+* Allow to Pause/Resume activity  
+* Add Stopwatch type  

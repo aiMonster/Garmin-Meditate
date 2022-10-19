@@ -1,0 +1,12 @@
+<drawables>
+    <bitmap id="LauncherIcon" filename="light_icon.png" />
+    <drawable-list id="actions_split_line">
+        <shape
+            type="rectangle"
+            x="center"
+            y="72%"
+            width="40%"
+            height="1"
+        />
+    </drawable-list>
+</drawables>

@@ -1,0 +1,4 @@
+<properties>
+    <property id="appVersion" type="string">1.0.0</property>
+    <property id="duration" type="number">5</property>
+</properties>
