@@ -1,4 +1,9 @@
 <layout id="MainLayout">
+    <bitmap id="space_img" x="center" y="center" filename="../drawables/space.png">
+        <palette>
+            <color>40ABB3</color>
+        </palette>
+    </bitmap>
     <label
         id="current_timer"
         text="7:00"
