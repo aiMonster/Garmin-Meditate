@@ -1,5 +1,4 @@
 <layout id="CompletedLayout">
-    <bitmap id="space_img" x="center" y="center" filename="../drawables/space.gif" />
     <label
         id="completed_lbl"
         text="COMPLETED"
