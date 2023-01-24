@@ -12,3 +12,4 @@ https://apps.garmin.com/en-US/apps/8bb6d332-3c49-43f9-be36-f42094f89dff
 # Future enhancements
 * Allow to Pause/Resume activity  
 * Add Stopwatch type  
+* Allow to Stop and Save activity in the middle  
