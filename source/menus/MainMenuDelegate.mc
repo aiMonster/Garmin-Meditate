@@ -24,7 +24,7 @@ class MainMenuViewDelegate extends WatchUi.Menu2InputDelegate {
         }
     }
 
-    function updateDurationSettings(value as Number) as Void {
+    function updateDurationSettings(value) as Void {
         _mainMenuView.updateSublabel("duration", value);
         DataManager.setDurationValue(value);
     }

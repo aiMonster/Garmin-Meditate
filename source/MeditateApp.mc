@@ -28,6 +28,6 @@ function getApp() as MeditateApp {
 }
 
 // Returns main view instance
-function getView() as ContrastShowerView {
+function getView() {
     return Application.getApp().getView();
 }
