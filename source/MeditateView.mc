@@ -29,13 +29,13 @@ class MeditateView extends WatchUi.View {
     }
 
     // Updates timer value on the view
-    function setTimerValue(seconds as Number) as Void {
+    function setTimerValue(seconds) as Void {
         _currentTimerElement.setText(formatTime(seconds/60, seconds%60));
 
         WatchUi.requestUpdate();
     }
 
-    function formatTime(minutes as Number, seconds as Number) as String {
+    function formatTime(minutes, seconds) {
         var secondsFormatted = seconds > 9 ? seconds.toString() : "0" + seconds.toString();
         return minutes.toString() + ":" + secondsFormatted;
     }
