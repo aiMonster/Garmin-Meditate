@@ -7,7 +7,8 @@ https://apps.garmin.com/en-US/apps/8bb6d332-3c49-43f9-be36-f42094f89dff
 
 # Version History
 
-1.0.3 - Add support of Forerunner 965
+1.0.4 - Add support of new devices  
+1.0.3 - Add support of Forerunner 965  
 1.0.2 - Add a space background with a single color  
 1.0.1 - Temporarily removed background image due to memory issues  
 **1.0.0 - Initial public version**
