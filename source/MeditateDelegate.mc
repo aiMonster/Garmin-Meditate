@@ -82,13 +82,18 @@ class MeditateDelegate extends WatchUi.BehaviorDelegate {
         return;
      }
 
-    // Calls an attention by tone and backlight
     function callAttention(backlight as Boolean) as Void {
+
+        var vibeData = [
+            new Attention.VibeProfile(40, 50)
+        ];
+        Attention.vibrate(vibeData);
+
         var toneProfile =
         [
-            new Attention.ToneProfile( 700, 250),
-            new Attention.ToneProfile( 1000, 100),
-            new Attention.ToneProfile( 1500, 100)
+            new Attention.ToneProfile( 200, 100),
+            new Attention.ToneProfile( 300, 50),
+            new Attention.ToneProfile( 400, 100)
         ];
         Attention.playTone({:toneProfile=>toneProfile});
         Attention.backlight(backlight);
