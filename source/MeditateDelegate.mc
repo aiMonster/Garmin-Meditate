@@ -4,7 +4,6 @@ import Toybox.Attention;
 import Toybox.Timer;
 
 class MeditateDelegate extends WatchUi.BehaviorDelegate {
-    private static var LONG_DURATION = 1500;
 
     private var _view = getView();
 
@@ -30,9 +29,11 @@ class MeditateDelegate extends WatchUi.BehaviorDelegate {
             ActivityManager.startSession();
             
             startCountdown();
+        } else {
+            stopSession();
         }
+        return;
         
-        return true;
     }
 
     // On Back button click
@@ -46,7 +47,7 @@ class MeditateDelegate extends WatchUi.BehaviorDelegate {
     function startCountdown() {
         _currentDuration = DataManager.getDurationValue() * 60 - 1;
 
-        callAttention(LONG_DURATION, true);
+        callAttention(true);
 
         _timer = new Timer.Timer();
         _timer.start(method(:updateCountdownValue), 1000, true);
@@ -55,29 +56,46 @@ class MeditateDelegate extends WatchUi.BehaviorDelegate {
     function updateCountdownValue() {
         // If its the last tick
         if (_currentDuration == 0) {
-            callAttention(LONG_DURATION, true);
+            
             _view.setTimerValue(_currentDuration);
-
-            _timer.stop();
-
-            ActivityManager.stopSession();
-
-            _inProgress = false;
-
-            var completedView = new CompletedView();
-            WatchUi.switchToView(completedView, new CompletedViewDelegate(completedView), WatchUi.SLIDE_UP);
-
-            return;
+            stopSession();
+           
         }
 
         _view.setTimerValue(_currentDuration);
         _currentDuration--;
     }
 
-    // Calls an attention by vibration and backlight
-    function callAttention(duration as Number, backlight as Boolean) as Void {
-        var vibeData = [new Attention.VibeProfile(100, duration)];
+     function stopSession() as Void {
+
+        callAttention(true);
+
+        _timer.stop();
+
+        ActivityManager.stopSession();
+
+        _inProgress = false;
+
+        var completedView = new CompletedView();
+        WatchUi.switchToView(completedView, new CompletedViewDelegate(completedView), WatchUi.SLIDE_UP);
+
+        return;
+     }
+
+    function callAttention(backlight as Boolean) as Void {
+
+        var vibeData = [
+            new Attention.VibeProfile(40, 50)
+        ];
         Attention.vibrate(vibeData);
+
+        var toneProfile =
+        [
+            new Attention.ToneProfile( 200, 100),
+            new Attention.ToneProfile( 300, 50),
+            new Attention.ToneProfile( 400, 100)
+        ];
+        Attention.playTone({:toneProfile=>toneProfile});
         Attention.backlight(backlight);
 
         new Timer.Timer().start(method(:turnOffBacklight), 3000, false);
