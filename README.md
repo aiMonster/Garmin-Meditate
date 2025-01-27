@@ -24,3 +24,4 @@ https://apps.garmin.com/en-US/apps/8bb6d332-3c49-43f9-be36-f42094f89dff
 - Allow disabling vibration at the end
 - Add total statistic of meditation made by with the app
 - Add possibility to select time before the activity to not interrupt the deep meditation
+- Add progress notification (e.g. alert every 5 minutes since the activity started)
