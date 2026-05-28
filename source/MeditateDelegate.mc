@@ -76,15 +76,24 @@ class MeditateDelegate extends WatchUi.BehaviorDelegate {
 
     // Calls an attention by vibration and backlight
     function callAttention(duration as Number, backlight as Boolean) as Void {
-        var vibeData = [new Attention.VibeProfile(100, duration)];
-        Attention.vibrate(vibeData);
-        Attention.backlight(backlight);
+        if (Attention has :vibrate) {
+            var vibeData = [new Attention.VibeProfile(100, duration)];
+            Attention.vibrate(vibeData);
+        }
+
+         tryToggleBacklight(backlight);
 
         new Timer.Timer().start(method(:turnOffBacklight), 3000, false);
     }
 
     // Turns off backlight
     function turnOffBacklight() as Void {
-        Attention.backlight(false);
+         tryToggleBacklight(false);
+    }
+
+    function tryToggleBacklight(enable) {
+        try {
+            Attention.backlight(enable);
+        } catch (ex) {}
     }
 }
